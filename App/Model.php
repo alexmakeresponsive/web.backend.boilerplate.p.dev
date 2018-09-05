@@ -17,6 +17,11 @@ abstract class Model
 
     public static function findAll()
     {
+        //self - раннее статическое связывание
+        //ыефешс - позднее статическое связыавние
+        //всего 3 стадии компиялции PHP
+        //ORM - object relation mapping
+
         $db = new Db();
         $sql = 'SELECT * FROM ' . static::TABLE;
 
