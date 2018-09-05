@@ -18,10 +18,11 @@ abstract class Model
     public static function findAll()
     {
         $db = new Db();
-        $sql = 'SELECT * FROM ' . self::TABLE;
+        $class = get_called_class();
+        $sql = 'SELECT * FROM ' . $class::TABLE;
 
         return $db->query(
-            $sql , [], self::class
+            $sql , [], $class
         );
     }
 }
