@@ -10,14 +10,14 @@ namespace App\Models;
 
 use App\Db;
 
-class Article
+class User
 {
     public $id;
-    public $title;
-    public $content;
+    public $email;
+    public $name;
 
 //    public static $table = 'news';
-    public const TABLE = 'news';
+    public const TABLE = 'users';
 
     public static function findAll()
     {
@@ -25,11 +25,10 @@ class Article
 
         return $db->query(
              'SELECT * FROM ' .
-//            Article::TABLE , [],
             self::TABLE , [],
-//            '\App\Models\Article'
-//            Article::class
             self::class
         );
+
+
     }
 }
