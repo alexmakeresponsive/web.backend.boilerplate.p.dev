@@ -31,23 +31,6 @@ class Db
         $sth = $this->dbh->prepare($sql);
         $sth->execute($data);
 
-        $data = $sth->fetchAll();
-
-        $ret =[];
-
-        foreach ($data as $row) {
-            $item = new $class;
-
-            foreach ($row as $key=>$value) {
-                if (is_numeric($key)) {
-                    continue;
-                }
-                $item->$key = $value;
-            }
-
-            $ret[] = $item;
-        }
-
-        return $ret;
+        return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
     }
 }
