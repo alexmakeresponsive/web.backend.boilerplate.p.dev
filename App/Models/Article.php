@@ -9,8 +9,9 @@
 namespace App\Models;
 
 use App\Db;
+use App\Model;
 
-class Article
+class Article extends Model
 {
     public $id;
     public $title;
@@ -19,17 +20,9 @@ class Article
 //    public static $table = 'news';
     public const TABLE = 'news';
 
-    public static function findAll()
-    {
-        $db = new Db();
 
-        return $db->query(
-             'SELECT * FROM ' .
-//            Article::TABLE , [],
-            self::TABLE , [],
-//            '\App\Models\Article'
-//            Article::class
-            self::class
-        );
+    public function getModelName()
+    {
+        // TODO: Implement getModelName() method.
     }
 }

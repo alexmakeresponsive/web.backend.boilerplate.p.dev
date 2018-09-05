@@ -9,7 +9,19 @@
 namespace App;
 
 
-class Model
+abstract class Model
 {
+    public const TABLE = '';
 
+    public abstract function getModelName();
+
+    public static function findAll()
+    {
+        $db = new Db();
+        $sql = 'SELECT * FROM ' . self::TABLE;
+
+        return $db->query(
+            $sql , [], self::class
+        );
+    }
 }

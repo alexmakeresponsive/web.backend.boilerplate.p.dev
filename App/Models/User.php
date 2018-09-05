@@ -9,8 +9,9 @@
 namespace App\Models;
 
 use App\Db;
+use App\Model;
 
-class User
+class User extends Model
 {
     public $id;
     public $email;
@@ -19,16 +20,9 @@ class User
 //    public static $table = 'news';
     public const TABLE = 'users';
 
-    public static function findAll()
+
+    public function getModelName()
     {
-        $db = new Db();
-
-        return $db->query(
-             'SELECT * FROM ' .
-            self::TABLE , [],
-            self::class
-        );
-
-
+        // TODO: Implement getModelName() method.
     }
 }
