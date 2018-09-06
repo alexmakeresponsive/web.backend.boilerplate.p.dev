@@ -29,3 +29,6 @@ $view = new App\View();
 $view->articles = \App\Models\Article::findAll();
 $view->render( __DIR__ . '/App/Templates/index.php' );
 
+$view->foo = 'some str';
+var_dump(count($view));
+
