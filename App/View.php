@@ -9,6 +9,12 @@
 namespace App;
 
 
+/**
+ * Class View
+ * @package App
+ *
+ * @property array $articles
+ */
 class View
 {
     protected $data = [];
@@ -32,6 +38,9 @@ class View
         return isset($this->data[$name]);
     }
 
+    /**
+     * @deprecated
+     */
     public function render($template)
     {
         include $template;
