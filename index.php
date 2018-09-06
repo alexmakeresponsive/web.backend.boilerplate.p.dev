@@ -1,20 +1,19 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
-require __DIR__ . '/autoload.php';
+require __DIR__ . '/App/autoload.php';
 
 
-//$view = new App\View();
-//$view->articles = \App\Models\Article::findAll();
-//$view->render(__DIR__ . '/App/Views/index.php');
+$ctrl = $_GET['ctrl']  ?? 'Index';
+$class = '\App\Controllers\\' . $ctrl;
 
-
-$ctrl = new \App\Controllers\Index();
+$ctrl  = new $class;
 $ctrl();
 
 
 //echo '<pre>';
 //var_dump( $view->articles );
 //echo '</pre>';
+
 //$view->foo = 'some str';
 //var_dump(count($view));
 

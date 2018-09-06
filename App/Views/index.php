@@ -27,7 +27,7 @@
 
     <?php foreach ( $this->articles as $article ) { ?>
         <article>
-            <a href="<?php echo '/article.php?id=' . $article->id; ?>">
+            <a href="<?php echo '?ctrl=Article&id=' . $article->id; ?>&username=Alexander">
                 <h3><?php echo $article->title; ?></h3>
             </a>
             <p><?php echo $article->content; ?></p>
