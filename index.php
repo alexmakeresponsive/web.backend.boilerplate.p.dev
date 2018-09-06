@@ -22,5 +22,10 @@ require __DIR__ . '/autoload.php';
 //var_dump($news);
 //echo '</pre>';
 
-$articles = \App\Models\Article::findAll();
-include __DIR__ . '/App/Templates/index.php';
+//$articles = \App\Models\Article::findAll();
+//include __DIR__ . '/App/Templates/index.php';
+
+$view = new App\View();
+$view->assign('articles', \App\Models\Article::findAll() );
+$view->render( __DIR__ . '/App/Templates/index.php' );
+

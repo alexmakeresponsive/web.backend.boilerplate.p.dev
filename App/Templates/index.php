@@ -17,7 +17,8 @@
 
     <h1>Новости</h1>
 
-    <?php foreach ( $articles as $article ) { ?>
+<!--    --><?php //foreach ( $articles as $article ) { ?>
+    <?php foreach ( $this->data['articles'] as $article ) { ?>
         <article>
             <h3><?php echo $article->title ?></h3>
             <p><?php echo $article->content ?></p>
