@@ -5,7 +5,7 @@ require __DIR__ . '/autoload.php';
 
 $view = new App\View();
 $view->article = \App\Models\Article::findById($_GET['id']);
-$view->render( __DIR__ . '/App/Templates/article.php' );
+$view->render(__DIR__ . '/App/Views/article.php');
 
 //echo '<pre>';
 //var_dump( $view->article );
