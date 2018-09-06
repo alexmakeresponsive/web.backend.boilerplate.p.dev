@@ -1,5 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
+
+//var_dump(__DIR__);
 require __DIR__ . '/App/autoload.php';
 
 
