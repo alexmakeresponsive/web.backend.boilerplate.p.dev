@@ -8,14 +8,13 @@
 
 namespace App\Controllers;
 
-use App\View;
+use App\Controller;
 
-class Article
+class Article extends Controller
 {
     public function action()
     {
-        $view = new View();
-        $view->article = \App\Models\Article::findById($_GET['id']);
-        $view->render(__DIR__ . '/../Views/article.php');
+        $this->view->article = \App\Models\Article::findById($_GET['id']);
+        $this->view->render(__DIR__ . '/../Views/article.php');
     }
 }

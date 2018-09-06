@@ -8,15 +8,14 @@
 
 namespace App\Controllers;
 
-use App\View;
+use App\Controller;
 use App\Models\Article;
 
-class Index
+class Index extends Controller
 {
     public function action()
     {
-        $view = new View();
-        $view->articles = Article::findAll();
-        $view->render(__DIR__ . '/../Views/index.php');
+        $this->view->articles = Article::findAll();
+        $this->view->render(__DIR__ . '/../Views/index.php');
     }
 }
