@@ -23,17 +23,12 @@
 
     <?php include __DIR__ . '/header.php'; ?>
 
-    <h1>Новости</h1>
+    <h1><?php echo $this->article->title; ?></h1>
 
-    <?php foreach ( $this->articles as $article ) { ?>
         <article>
-            <a href="<?php echo '/article.php?id=' . $article->id; ?>">
-                <h3><?php echo $article->title; ?></h3>
-            </a>
-            <p><?php echo $article->content; ?></p>
+            <p><?php echo $this->article->content; ?></p>
         </article>
         <hr>
-    <?php } ?>
 
 </body>
 </html>
