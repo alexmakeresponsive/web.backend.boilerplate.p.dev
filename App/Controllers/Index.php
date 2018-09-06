@@ -13,7 +13,7 @@ use App\Models\Article;
 
 class Index extends Controller
 {
-    public function action()
+    public function __invoke()
     {
         $this->view->articles = Article::findAll();
         $this->view->render(__DIR__ . '/../Views/index.php');

@@ -12,7 +12,7 @@ use App\Controller;
 
 class Article extends Controller
 {
-    public function action()
+    public function __invoke()
     {
         $this->view->article = \App\Models\Article::findById($_GET['id']);
         $this->view->render(__DIR__ . '/../Views/article.php');
