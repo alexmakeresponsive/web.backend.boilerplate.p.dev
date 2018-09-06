@@ -26,6 +26,6 @@ require __DIR__ . '/autoload.php';
 //include __DIR__ . '/App/Templates/index.php';
 
 $view = new App\View();
-$view->assign('articles', \App\Models\Article::findAll() );
+$view->articles = \App\Models\Article::findAll();
 $view->render( __DIR__ . '/App/Templates/index.php' );
 
